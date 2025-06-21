@@ -1,4 +1,4 @@
-# === CHẶN QUẢNG CÁO ZALO ===
+! === CHẶN QUẢNG CÁO ===
 ||zaloapp.com^$important
 ||log.api.zaloapp.com^
 ||centralized.zaloapp.com^
@@ -6,11 +6,7 @@
 ||ad.zaloapp.com^
 ||tracking.zaloapp.com^
 ||analytics.zaloapp.com^
-||*.zaloapi.com^
-||*.quangcao.zaloapp.com^
+||zaloapi.com^
+||quangcao.zaloapp.com^
 ||tracking.intl.miui.com^
 ||api.sec.miui.com^
-# Chặn cả IPv6 (nếu cần)
-0.0.0.0 zaloapp.com
-0.0.0.0 log.api.zaloapp.com
-:: zaloapp.com
