@@ -8,6 +8,14 @@
 ||analytics.zaloapp.com^
 ||*.zaloapi.com^
 ||*.quangcao.zaloapp.com^
+
+#===Chặn Xiaomi ===
+
+||tracking.intl.miui.com^
+||api.sec.miui.com^
+
+
+
 # Chặn cả IPv6 (nếu cần)
 0.0.0.0 zaloapp.com
 0.0.0.0 log.api.zaloapp.com
