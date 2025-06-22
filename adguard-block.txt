@@ -8,8 +8,10 @@
 ||analytics.zaloapp.com^
 ||zaloapi.com^
 ||quangcao.zaloapp.com^
+#
 ||tracking.intl.miui.com^
 ||api.sec.miui.com^
+#
 ||webapi.dantri.com.vn^
 ||icdn.dantri.com.vn^
 ||gadgets.dantri.com.vn^
