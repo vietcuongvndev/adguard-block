@@ -10,3 +10,13 @@
 ||quangcao.zaloapp.com^
 ||tracking.intl.miui.com^
 ||api.sec.miui.com^
+||webapi.dantri.com.vn^
+||icdn.dantri.com.vn^
+||gadgets.dantri.com.vn^
+||vcdn.dantri.com.vn^
+||recommendation-api.dantri.com.vn^
+||cdnasset.dantri.com.vn^
+||cdnmobile.dantri.com.vn^
+||cdnphoto.dantri.com.vn^
+||login.dantri.com.vn^
+||cdnlogin.dantri.com.vn^
