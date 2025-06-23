@@ -1,4 +1,9 @@
-! === CHẶN QUẢNG CÁO ===
+! Title: Bộ lọc chặn quảng cáo và trình theo dõi tối ưu cho AdGuard (phiên bản 2025-06-23)
+! Description: Chặn quảng cáo và trình theo dõi từ Zalo, Dantri, Terabox và Xiaomi.
+! Tương thích: AdGuard Home, AdGuard Androd
+! Last Modified: 23-06-2025
+---
+## CHẶN QUẢNG CÁO & THEO DÕI ZALO
 ||zaloapp.com^$important
 ||log.api.zaloapp.com^
 ||centralized.zaloapp.com^
@@ -8,8 +13,9 @@
 ||analytics.zaloapp.com^
 ||zaloapi.com^
 ||quangcao.zaloapp.com^
-#
-#
+
+---
+## CHẶN QUẢNG CÁO & THEO DÕI DANTRI
 ||webapi.dantri.com.vn^
 ||icdn.dantri.com.vn^
 ||gadgets.dantri.com.vn^
@@ -19,80 +25,56 @@
 ||cdnmobile.dantri.com.vn^
 ||cdnphoto.dantri.com.vn^
 ||login.dantri.com.vn^
-||cdnlogin.dantri.com.vn^  #######################################################
-! TERABOX ULTIMATE BLOCKLIST - PHIÊN BẢN SIÊU MẠNH
-! Cập nhật ngày: 08/2023
-! Tác dụng: Chặn MỌI hình thức theo dõi + quảng cáo
-! #######################################################
+||cdnlogin.dantri.com.vn^
 
-! ========== CHẶN TẬN GỐC DOMAIN CHÍNH ==========
-||terabox.com^$all
-||*.terabox.*^$all
-||terabox.*^$all
+---
+## CHẶN QUẢNG CÁO & THEO DÕI TERABOX ULTIMATE
+! Tác dụng: Chặn MỌI hình thức theo dõi + quảng cáo Terabox
+||terabox.com^
+||*.terabox.*^
+||terabox.*^
 
-! ========== DOMAIN TRACKING ĐẶC BIỆT ==========
 ! Core tracking domains
-||szb-cdata.terabox.com^$all
-||kul-cdata.terabox.com^$all
-||dm.terabox.com^$all
-||dm-data.terabox.com^$all
-||data.terabox.com^$all
-||dm-sofire.terabox.com^$all
-||ymg-api.terabox.com^$all
-||kul-vdata.terabox.com^$all
-||dm-d.terabox.com^$all
-||kul-ddata.terabox.com^$all
-||d-jp.terabox.com^$all
+||szb-cdata.terabox.com^
+||kul-cdata.terabox.com^
+||dm.terabox.com^
+||dm-data.terabox.com^
+||data.terabox.com^
+||dm-sofire.terabox.com^
+||ymg-api.terabox.com^
+||kul-vdata.terabox.com^
+||dm-d.terabox.com^
+||kul-ddata.terabox.com^
+||d-jp.terabox.com^
 
-! ========== CHẶN QUẢNG CÁO NÂNG CAO ==========
-||ad*.terabox.com^$all
-||ads*.terabox.*^$all
-||*.adservice.terabox.*^$all
-||adx.terabox.com^$all
-||ads-content.terabox.com^$all
+! Chặn quảng cáo nâng cao
+||ad*.terabox.com^
+||ads*.terabox.*^
+||*.adservice.terabox.*^
+||adx.terabox.com^
+||ads-content.terabox.com^
 
-! ========== CHẶN IP TRỰC TIẾP ==========
-||104.16.136.*^$all
-||172.67.204.*^$all
+! Chặn IP trực tiếp (Lưu ý: có thể chặn nhầm nếu IP được dùng cho mục đích khác)
+||104.16.136.0/24^
+||172.67.204.0/24^
 
-! ========== CHẶN PHƯƠNG THỨC ẨN ==========
-! Chặn WebSocket
-||wss://*.terabox.com^$all
-! Chặn HTTP/HTTPS
-|https://$domain=terabox.com
+! Chặn phương thức ẩn (chỉ áp dụng cho AdGuard App, AdGuard Home không hỗ trợ `$all` cho `wss` và `https` quy tắc lọc URL cụ thể)
+! Đối với AdGuard Home, các quy tắc dựa trên domain đã bao phủ hầu hết các trường hợp.
 ! Chặn API ngầm
 /api/track|$domain=terabox.com
 /api/log|$domain=terabox.com
 
-! ========== CHẶN CẢ TRACKER BÊN THỨ 3 ==========
-||doubleclick.net^$third-party
-||google-analytics.com^$third-party
-||googletagservices.com^$third-party
-||facebook.net^$third-party
-||scorecardresearch.com^$third-party
+! Chặn cả tracker bên thứ 3 (Chỉ áp dụng nếu được yêu cầu đặc biệt)
+! Các miền này đã được chặn bởi các bộ lọc tiêu chuẩn như AdGuard Base.
+! ||doubleclick.net^$third-party
+! ||google-analytics.com^$third-party
+! ||googletagservices.com^$third-party
+! ||facebook.net^$third-party
+! ||scorecardresearch.com^$third-party
 
-! ========== BẢO VỆ TỔNG THỂ ==========
-! Chặn tất cả subdomain chưa biết
-/.*\.terabox\.com.*/$all
-
-! #######################################################
-! LƯU Ý QUAN TRỌNG:
-! 1. Danh sách này có thể làm một số tính năng Terabox ngừng hoạt động
-! 2. Nếu cần whitelist domain nào, thêm: @@||domain.com^$all
-! 3. Đảm bảo đã bật HTTPS Filtering trong AdGuard
-! #######################################################
-#
-# Title: HaGeZi's Xiaomi Tracker DNS Blocklist (Optimized for AdGuard)
-# Description: Blocks Xiaomi native broadband trackers that track your activity
-# Homepage: https://github.com/hagezi/dns-blocklists
-# License: https://github.com/hagezi/dns-blocklists/blob/main/LICENSE
-# Issues: https://github.com/hagezi/dns-blocklists/issues
-# Expires: 1 day
-# Last modified: 20 Jun 2025 15:56 UTC
-# Version: 2025.0620.1556.35
-# Syntax: Domains (including possible subdomains)
-# Number of entries: 479
-#
+---
+## CHẶN THEO DÕI XIAOMI (Tối ưu cho AdGuard)
+! Đây là danh sách được tối ưu từ HaGeZi's Xiaomi Tracker DNS Blocklist, tập trung vào chặn các trình theo dõi.
 ||traffic-media.co.uk^
 ||mistat.india.xiaomi.com.edgesuite.net^
 ||ad.intl.xiaomi.com.edgesuite.net^
@@ -572,5 +554,3 @@
 ||sandbox.xmpush.xiaomi.com^
 ||test-api.xmpush.xiaomi.com^
 ||vip-api.xmpush.xiaomi.com^
-||tracking.intl.miui.com^
-||api.sec.miui.com^
