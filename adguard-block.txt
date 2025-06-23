@@ -23,6 +23,18 @@
 ||login.dantri.com.vn^
 ||cdnlogin.dantri.com.vn^
 #
+#Terabox
+||szb-cdata.terabox.com^$important
+||kul-cdata.terabox.com^$important
+||dm.terabox.com^$important
+||dm-data.terabox.com^$important
+||kul-vdata.terabox.com^$important
+||dm-d.terabox.com^$important
+||data.terabox.com^$important
+||kul-ddata.terabox.com^$important
+||d-jp.terabox.com^$important
+||ymg-api.terabox.com^$important
+#
 # Title: HaGeZi's Xiaomi Tracker DNS Blocklist (Optimized for AdGuard)
 # Description: Blocks Xiaomi native broadband trackers that track your activity
 # Homepage: https://github.com/hagezi/dns-blocklists
