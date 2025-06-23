@@ -19,48 +19,68 @@
 ||cdnmobile.dantri.com.vn^
 ||cdnphoto.dantri.com.vn^
 ||login.dantri.com.vn^
-||cdnlogin.dantri.com.vn^ #################################################
-! DANH SÁCH CHẶN TERABOX - PHIÊN BẢN NÂNG CAO
-! Tích hợp chặn tracking mạnh + quảng cáo
-! Tương thích AdGuard Home và AdGuard Android
-! ######################################################
-! =========== CORE TRACKING DOMAINS =======
-||terabox.com^$third-party,important
-||*.terabox.com^$third-party,important
+||cdnlogin.dantri.com.vn^  #######################################################
+! TERABOX ULTIMATE BLOCKLIST - PHIÊN BẢN SIÊU MẠNH
+! Cập nhật ngày: 08/2023
+! Tác dụng: Chặn MỌI hình thức theo dõi + quảng cáo
+! #######################################################
 
-! ----- Các domain tracking đặc biệt nguy hiểm -----
-||szb-cdata.terabox.com^$important
-||kul-cdata.terabox.com^$important
-||dm.terabox.com^$important
-||dm-data.terabox.com^$important
-||data.terabox.com^$important
-||dm-sofire.terabox.com^$important
-||ymg-api.terabox.com^$important
+! ========== CHẶN TẬN GỐC DOMAIN CHÍNH ==========
+||terabox.com^$all
+||*.terabox.*^$all
+||terabox.*^$all
 
-! ================= ANTI-AD SYSTEM =================
-||ad.terabox.com^$important
-||ads.terabox.com^$important
-||*.adservice.terabox.*^$important
-||adx.terabox.com^$important
+! ========== DOMAIN TRACKING ĐẶC BIỆT ==========
+! Core tracking domains
+||szb-cdata.terabox.com^$all
+||kul-cdata.terabox.com^$all
+||dm.terabox.com^$all
+||dm-data.terabox.com^$all
+||data.terabox.com^$all
+||dm-sofire.terabox.com^$all
+||ymg-api.terabox.com^$all
+||kul-vdata.terabox.com^$all
+||dm-d.terabox.com^$all
+||kul-ddata.terabox.com^$all
+||d-jp.terabox.com^$all
 
-! ================= ADVANCED PROTECTION =================
-! Chặn các dịch vụ tracking phổ biến
-||doubleclick.net^$important
-||google-analytics.com^$important
-||googletagmanager.com^$important
-||facebook.net^$important
-||fbcdn.net^$important
+! ========== CHẶN QUẢNG CÁO NÂNG CAO ==========
+||ad*.terabox.com^$all
+||ads*.terabox.*^$all
+||*.adservice.terabox.*^$all
+||adx.terabox.com^$all
+||ads-content.terabox.com^$all
 
-! ================= CẤU HÌNH NÂNG CAO =================
-! Chặn cả các subdomain không xác định
-/^https?:\/\/([a-z0-9]+\.)?terabox\.com\/track/
-/^https?:\/\/[^/]+\.terabox\.com\/collect/
+! ========== CHẶN IP TRỰC TIẾP ==========
+||104.16.136.*^$all
+||172.67.204.*^$all
+
+! ========== CHẶN PHƯƠNG THỨC ẨN ==========
+! Chặn WebSocket
+||wss://*.terabox.com^$all
+! Chặn HTTP/HTTPS
+|https://$domain=terabox.com
+! Chặn API ngầm
+/api/track|$domain=terabox.com
+/api/log|$domain=terabox.com
+
+! ========== CHẶN CẢ TRACKER BÊN THỨ 3 ==========
+||doubleclick.net^$third-party
+||google-analytics.com^$third-party
+||googletagservices.com^$third-party
+||facebook.net^$third-party
+||scorecardresearch.com^$third-party
+
+! ========== BẢO VỆ TỔNG THỂ ==========
+! Chặn tất cả subdomain chưa biết
+/.*\.terabox\.com.*/$all
 
 ! #######################################################
-! LƯU Ý: Có thể ảnh hưởng đến một số tính năng của Terabox
-! Nếu gặp lỗi, thử whitelist domain cần thiết bằng:
-! @@||domain.com^$important
-! ################################################
+! LƯU Ý QUAN TRỌNG:
+! 1. Danh sách này có thể làm một số tính năng Terabox ngừng hoạt động
+! 2. Nếu cần whitelist domain nào, thêm: @@||domain.com^$all
+! 3. Đảm bảo đã bật HTTPS Filtering trong AdGuard
+! #######################################################
 #
 # Title: HaGeZi's Xiaomi Tracker DNS Blocklist (Optimized for AdGuard)
 # Description: Blocks Xiaomi native broadband trackers that track your activity
