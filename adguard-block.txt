@@ -19,19 +19,48 @@
 ||cdnmobile.dantri.com.vn^
 ||cdnphoto.dantri.com.vn^
 ||login.dantri.com.vn^
-||cdnlogin.dantri.com.vn^
-#
-#Terabox
+||cdnlogin.dantri.com.vn^ #################################################
+! DANH SÁCH CHẶN TERABOX - PHIÊN BẢN NÂNG CAO
+! Tích hợp chặn tracking mạnh + quảng cáo
+! Tương thích AdGuard Home và AdGuard Android
+! ######################################################
+! =========== CORE TRACKING DOMAINS =======
+||terabox.com^$third-party,important
+||*.terabox.com^$third-party,important
+
+! ----- Các domain tracking đặc biệt nguy hiểm -----
 ||szb-cdata.terabox.com^$important
 ||kul-cdata.terabox.com^$important
 ||dm.terabox.com^$important
 ||dm-data.terabox.com^$important
-||kul-vdata.terabox.com^$important
-||dm-d.terabox.com^$important
 ||data.terabox.com^$important
-||kul-ddata.terabox.com^$important
-||d-jp.terabox.com^$important
+||dm-sofire.terabox.com^$important
 ||ymg-api.terabox.com^$important
+
+! ================= ANTI-AD SYSTEM =================
+||ad.terabox.com^$important
+||ads.terabox.com^$important
+||*.adservice.terabox.*^$important
+||adx.terabox.com^$important
+
+! ================= ADVANCED PROTECTION =================
+! Chặn các dịch vụ tracking phổ biến
+||doubleclick.net^$important
+||google-analytics.com^$important
+||googletagmanager.com^$important
+||facebook.net^$important
+||fbcdn.net^$important
+
+! ================= CẤU HÌNH NÂNG CAO =================
+! Chặn cả các subdomain không xác định
+/^https?:\/\/([a-z0-9]+\.)?terabox\.com\/track/
+/^https?:\/\/[^/]+\.terabox\.com\/collect/
+
+! #######################################################
+! LƯU Ý: Có thể ảnh hưởng đến một số tính năng của Terabox
+! Nếu gặp lỗi, thử whitelist domain cần thiết bằng:
+! @@||domain.com^$important
+! ################################################
 #
 # Title: HaGeZi's Xiaomi Tracker DNS Blocklist (Optimized for AdGuard)
 # Description: Blocks Xiaomi native broadband trackers that track your activity
