@@ -67,14 +67,6 @@
 /api/track|$domain=terabox.com
 /api/log|$domain=terabox.com
 
-! Chặn cả tracker bên thứ 3 (Chỉ áp dụng nếu được yêu cầu đặc biệt)
-! Các miền này đã được chặn bởi các bộ lọc tiêu chuẩn như AdGuard Base.
-! ||doubleclick.net^$third-party
-! ||google-analytics.com^$third-party
-! ||googletagservices.com^$third-party
-! ||facebook.net^$third-party
-! ||scorecardresearch.com^$third-party
-
 ---
 ## CHẶN THEO DÕI XIAOMI (Tối ưu cho AdGuard)
 ! Đây là danh sách được tối ưu từ HaGeZi's Xiaomi Tracker DNS Blocklist, tập trung vào chặn các trình theo dõi.
