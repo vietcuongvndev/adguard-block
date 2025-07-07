@@ -21,3 +21,8 @@
 ||cdnphoto.dantri.com.vn^
 ||login.dantri.com.vn^
 ||cdnlogin.dantri.com.vn^
+
+---
+# Báo Mới
+||bmcdn.me^
+
